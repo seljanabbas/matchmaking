@@ -1,0 +1,41 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <section id="fighter_details">
+        <div id="container text-center mt-4">
+        <h2>Fighter Details</h2>
+        <table class="table table-borderless table-style mt-4">
+            <tr>
+                {% for col in columns %}
+                    <th>{{ col.capitalize() }}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for value in fighter_details %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        </table>
+        </div>
+    </section>
+
+    <section id="fighter_latest_fights">
+        <div id="container text-center mt-4">
+        <h2>Fighter's Latest Fights</h2>
+        <table class="table table-bordered table-striped table-style">
+            <tr>
+                {% for col in fights_columns %}
+                    <th>{{ col.capitalize() }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in fighter_latest_fights %}
+                <tr>
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        </div>
+    </section>
+{% endblock %}

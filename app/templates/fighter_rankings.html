@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <section id="fighter_rankings">
+        <h2>Fighter Rankings</h2>
+        <form method="post" action="{{ url_for('main.fighter_rankings') }}">
+            <label for="filter_name">Filter by Name:</label>
+            <input type="text" name="filter_name" id="filter_name">
+            <label for="search_term">Search:</label>
+            <input type="text" name="search_term" id="search_term">
+            <button type="submit">Apply Filters</button>
+        </form>
+        <table class="table table-bordered table-striped">
+            <tr>
+                {% for column in fighters_columns %}
+                    <th>{{ column.capitalize() }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in fighter_rankings %}
+                <tr>
+                    {% for data in row %}
+                    <td>{{ data }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </section>
+{% endblock %}

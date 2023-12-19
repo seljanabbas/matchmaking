@@ -1,0 +1,124 @@
+/* Custom Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Set your desired background color */
+    width: auto; /* Set the maximum width for the background */
+    margin: 0 auto; /* Center the content within the maximum width */
+}
+
+header {
+    background-color: #333;
+}
+
+nav {
+    color: #fff;
+    padding: 10px;
+    margin-top: 0;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+    padding: 15px;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    overflow: auto;
+    max-height: 500px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+thead {
+    background-color: #333;
+    color: #f2f2f2;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+section {
+    float: left;
+    width: 50%; /* Set each section to take half of the page */
+}
+
+.table {
+    width: 100%; /* Make the table take the full width of its container */
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+input, button {
+    margin-bottom: 10px;
+}
+
+#submit_filter {
+    color: white;
+    background-color: #333;
+    border-radius: 5px;
+}
+
+#submit_filter:hover {
+    background-color: #500;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        text-align: center;
+    }
+
+    nav ul {
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+
+/* Add a class to your tables for more specific styling */
+.table-style {
+    max-width: 100%; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center the table on the page */
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/* Style the table cells */
+.table-style td, .table-style th {
+    padding: 10px; /* Adjust the padding as needed */
+    border: 1px solid #ddd; /* Add borders for better visibility */
+}
+
+/* Optional: Add some styling for even and odd rows */
+.table-style tr:nth-child(even) {
+    background-color: #f2f2f2;
+}

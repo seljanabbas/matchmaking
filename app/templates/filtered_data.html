@@ -1,0 +1,87 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <section id="event_info">
+        <div class="containe-fluid">
+            <h2>Event Information</h2>
+            <table class="table table-hover table-responsive" id="eventTable">
+                <thead>
+                    <tr>
+                        {% for column in event_columns %}
+                        <th scope="col">{{ column }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in filtered_data.events %}
+                    <tr>
+                        {% for data in row %}
+                            {% if loop.index == 1 %}
+                            <td scope="row"><a href="{{ url_for('main.event_details', event_title=data) }}">{{ data }}</a></td>
+                            {% else %}
+                            <td scope="row">{{ data }}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                    {% if not filtered_data.events %}
+                        {# Show full list if no filtered events #}
+                        {% for row in event_info %}
+                        <tr>
+                            {% for data in row %}
+                                {% if loop.index == 1 %}
+                                <td scope="row"><a href="{{ url_for('main.event_details', event_title=data) }}">{{ data }}</a></td>
+                                {% else %}
+                                <td scope="row">{{ data }}</td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="fighter_rankings">
+        <div class="container-fluid">
+            <h2>Fighter Information</h2>
+            <table class="table table-hover table-responsive" id="fighterTable">
+                <thead>
+                    <tr>
+                        {% for column in fighters_columns %}
+                        <th scope="col">{{ column }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in filtered_data.fighters %}
+                    <tr>
+                        {% for data in row %}
+                            {% if loop.index == 1 %}
+                            <td scope="row"><a href="{{ url_for('main.fighter_details', fighter_name=data) }}">{{ data }}</a></td>
+                            {% else %}
+                            <td scope="row">{{ data }}</td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                    {% if not filtered_data.fighters %}
+                        {# Show full list if no filtered fighters #}
+                        {% for row in fighter_rankings %}
+                        <tr>
+                            {% for data in row %}
+                                {% if loop.index == 1 %}
+                                <td scope="row"><a href="{{ url_for('main.fighter_details', fighter_name=data) }}">{{ data }}</a></td>
+                                {% else %}
+                                <td scope="row">{{ data }}</td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}

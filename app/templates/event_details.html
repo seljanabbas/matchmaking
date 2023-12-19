@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <section id="event_details">
+        <h2>Event Details</h2>
+        <table border="1">
+            <tr>
+                {% for column in event_columns %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+            <tr>
+                {% for value in event_details %}
+                    <td>{{ value }}</td>
+                {% endfor %}
+            </tr>
+        </table>
+    </section>
+
+    <section id="event_fights">
+        <h2>Event Fights</h2>
+        <table border="1">
+            <tr>
+                {% for column in fights_columns %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+            {% for row in event_fights %}
+                <tr>
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </section>
+{% endblock %}

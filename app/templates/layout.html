@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatchMaking</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap dropdowns and modals) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md border">
+        <div class="container-fluid">
+            <h1>MatchMaking</h1>
+            <ul class="navbar-nav me-auto mt-2">
+                <li class="nav-item"><a href="/" style="color:beige" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/web-app/app/templates/fighter_rankings.html" style="color:beige;" class="nav-link">Fighter Rankings</a></li>
+                <li class="nav-item"><a href="/fighter_details.html" style="color:beige;" class="nav-link">Compare Fighters<span style="color:red">(NEW!)</span></a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+</body>
+</html>
